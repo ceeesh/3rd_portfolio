@@ -3,3 +3,30 @@
 @theme {
   --color-mainBg: #3A6EA5; 
 }
+
+.win95-scroll::-webkit-scrollbar {
+  width: 14px;
+  height: 16px;
+}
+
+.win95-scroll::-webkit-scrollbar-track {
+  background: #d9d9d9;
+  border-left: 2px solid #afafaf;
+  /* border-top: 2px solid #fff; */
+  /* border-right: 2px solid #808080; */
+  /* border-bottom: 2px solid #808080; */
+}
+
+.win95-scroll::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  /* border: 2px solid #808080; */
+ border-top: 2px solid #fff;
+ border-left: 2px solid #fff;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+  /* box-shadow: inset -1px -1px 0px #fff, inset 1px 1px 0px #000; */
+}
+
+.win95-scroll::-webkit-scrollbar-thumb:hover {
+  background: #d0d0d0;
+}
