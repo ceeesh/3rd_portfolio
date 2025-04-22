@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Internet from "../components/Internet";
 import FooterWindow from "../layouts/FooterWindow";
 
 const Home = () => {
+  const [profileShow, setProfileShow] = useState(false);
+
   return (
-    <div className="border border-red-500 w-full h-full flex items-center justify-center">
-      <div></div>
-      <Internet />
+    <div className="w-full min-h-screen">
+      <div className="" onClick={() => setProfileShow(true)}>
+        BUTOTN
+      </div>
+      {profileShow && <Internet show={profileShow} setShow={setProfileShow} />}
+
       <FooterWindow />
     </div>
   );
