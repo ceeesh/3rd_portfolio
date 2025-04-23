@@ -2,6 +2,7 @@
 
 @theme {
   --color-mainBg: #3A6EA5; 
+  --color-secondaryBg: #008080;
 }
 
 .win95-scroll::-webkit-scrollbar {

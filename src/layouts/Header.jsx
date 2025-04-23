@@ -19,7 +19,7 @@ const Header = ({setShow, show}) => {
           <button className="border-b-2 border-r-2 border-black w-8 mr-2 bg-gray-300 border-l-2 border-t-2 border-l-gray-200 border-t-gray-200 cursor-pointer">
             &#9633;
           </button>
-          <button className="border-b-2 border-r-2 border-black w-8 bg-gray-300 border-l-2 border-t-2 border-l-gray-200 border-t-gray-200 cursor-pointer" onClick={() => setShow(false)}>
+          <button className="border-b-2 border-r-2 border-black w-8 bg-gray-300 border-l-2 border-t-2 border-l-gray-200 border-t-gray-200 cursor-pointer" onClick={() => setShow(prev => !prev)}>
             X
           </button>
         </div>

@@ -12,7 +12,8 @@ const Internet = ({ show, setShow, nodeRef, position, onPositionChange, style })
       position={position}
       onStop={(e, data) => onPositionChange(data.x, data.y)}
     >
-      <div ref={nodeRef} className="max-w-3xl shadow-[10px_10px_5px_#0A3B76]"  style={{
+      {/* shadow-[10px_10px_5px_#0A3B76] */}
+      <div ref={nodeRef} className="max-w-3xl shadow-[10px_10px_5px_#006666]"  style={{
           ...style,
           position: "absolute",
         }}>
