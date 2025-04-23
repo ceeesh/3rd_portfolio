@@ -1,28 +1,23 @@
-import React, { useRef } from "react";
+import React from "react";
 import About from "../sections/About";
 import Header from "../layouts/Header";
 import Footer from "../layouts/Footer";
 import Draggable from "react-draggable";
 
-const Internet = ({show, setShow}) => {
-  const nodeRef = useRef(null);
-  
+const Internet = ({ show, setShow, nodeRef, position, onPositionChange, style }) => {
   return (
-    <Draggable 
-    nodeRef={nodeRef} handle=".drag-handle" 
-    // handle=".handle"
-    defaultPosition={{x: 100, y: 400}}
-    // position={null}
-    // grid={[25, 25]}
-    // scale={1}
-    // onStart={this.handleStart}
-    // onDrag={this.handleDrag}
-    // onStop={this.handleStop}
+    <Draggable
+      nodeRef={nodeRef}
+      handle=".drag-handle"
+      position={position}
+      onStop={(e, data) => onPositionChange(data.x, data.y)}
     >
-      <div ref={nodeRef} className="max-w-3xl shadow-[10px_10px_5px_#0A3B76]">
-        {/* Adding 'drag-handle' class to header */}
+      <div ref={nodeRef} className="max-w-3xl shadow-[10px_10px_5px_#0A3B76]"  style={{
+          ...style,
+          position: "absolute",
+        }}>
         <div className="drag-handle">
-          <Header show={show} setShow={setShow}/>
+          <Header show={show} setShow={setShow} />
         </div>
         <About />
         <Footer />
@@ -30,5 +25,7 @@ const Internet = ({show, setShow}) => {
     </Draggable>
   );
 };
+
+
 
 export default Internet;
