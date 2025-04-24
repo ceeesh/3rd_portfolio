@@ -18,6 +18,7 @@ const Home = () => {
 
   const updateProfilePosition = (x, y) => setProfilePosition({ x, y });
   const updateProjectPosition = (x, y) => setProjectPosition({ x, y });
+  const updateNetworkPosition = (x, y) => setNetworksPosition({ x, y });
 
 
   return (
@@ -81,8 +82,8 @@ const Home = () => {
           setShow={setNetworksShow}
           nodeRef={networksRef}
           position={networksPosition}
-          onPositionChange={setNetworksPosition}
-          style={{ zIndex: 2 }}
+          onPositionChange={updateNetworkPosition}
+          style={{ zIndex: 3 }}
         />
       )}
 
