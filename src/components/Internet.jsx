@@ -10,6 +10,7 @@ const Internet = ({ show, setShow, nodeRef, position, onPositionChange, style })
       nodeRef={nodeRef}
       handle=".drag-handle"
       position={position}
+      cancel="button"   
       onStop={(e, data) => onPositionChange(data.x, data.y)}
     >
       {/* shadow-[10px_10px_5px_#0A3B76] */}

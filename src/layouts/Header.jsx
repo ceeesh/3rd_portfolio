@@ -8,18 +8,32 @@ import {
   FolderInput,
 } from "lucide-react";
 
-const Header = ({setShow, show}) => {
+const Header = ({ setShow, show }) => {
   return (
     <div className="container w-full border-4 border-gray-300">
       <div className="flex justify-end p-[2px] bg-gradient-to-r from-blue-800 to-blue-400">
         <div className="">
-          <button className="border-b-2 border-r-2 border-black w-8 bg-gray-300 border-l-2 border-t-2 border-l-gray-200 border-t-gray-200 cursor-pointer">
+          <button
+            onClick={() => setShow((prev) => !prev)}
+            className="border-2 w-8 bg-gray-300 cursor-pointer 
+    border-b-black border-r-black border-t-gray-200 border-l-gray-200 
+    active:border-t-black active:border-l-black active:border-b-gray-200 active:border-r-gray-200"
+          >
             _
           </button>
-          <button className="border-b-2 border-r-2 border-black w-8 mr-2 bg-gray-300 border-l-2 border-t-2 border-l-gray-200 border-t-gray-200 cursor-pointer">
+          <button
+            className="border-2 w-8 mr-2 bg-gray-300 cursor-pointer 
+    border-b-black border-r-black border-t-gray-200 border-l-gray-200 
+    active:border-t-black active:border-l-black active:border-b-gray-200 active:border-r-gray-200"
+          >
             &#9633;
           </button>
-          <button className="border-b-2 border-r-2 border-black w-8 bg-gray-300 border-l-2 border-t-2 border-l-gray-200 border-t-gray-200 cursor-pointer" onClick={() => setShow(prev => !prev)}>
+          <button
+            onClick={() => setShow((prev) => !prev)}
+            className="border-2 w-8 bg-gray-300 cursor-pointer 
+    border-b-black border-r-black border-t-gray-200 border-l-gray-200 
+    active:border-t-black active:border-l-black active:border-b-gray-200 active:border-r-gray-200"
+          >
             X
           </button>
         </div>
