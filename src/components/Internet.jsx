@@ -4,7 +4,7 @@ import Header from "../layouts/Header";
 import Footer from "../layouts/Footer";
 import Draggable from "react-draggable";
 
-const Internet = ({ show, setShow, nodeRef, position, onPositionChange, style }) => {
+const Internet = ({ show, setShow, nodeRef, position, onPositionChange, style, aboutContent }) => {
   return (
     <Draggable
       nodeRef={nodeRef}
@@ -21,7 +21,7 @@ const Internet = ({ show, setShow, nodeRef, position, onPositionChange, style })
         <div className="drag-handle">
           <Header show={show} setShow={setShow} />
         </div>
-        <About />
+        <About aboutContent={aboutContent}/>
         <Footer />
       </div>
     </Draggable>

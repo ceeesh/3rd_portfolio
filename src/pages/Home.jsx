@@ -50,7 +50,7 @@ const Home = () => {
       },
     }));
   };
-  
+
   useEffect(() => {
     setWindows((prev) => {
       const updated = { ...prev };
@@ -110,6 +110,25 @@ const Home = () => {
           position={windows.profile.position}
           onPositionChange={(x, y) => updateWindowPosition("profile", x, y)}
           style={{ zIndex: 1 }}
+          aboutContent={
+            <>
+              am quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Porro at eius molestiae vel
+              excepturi inventore autem eum pariatur. Voluptate quidem id
+              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
+              repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Porro at eius molestiae vel excepturi inventore autem eum
+              pariatur. Voluptate quidem id eligendi reiciendis, ab laboriosam
+              quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Porro at eius molestiae vel
+              excepturi inventore autem eum pariatur. Voluptate quidem id
+              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
+              repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Porro at eius molestiae vel excepturi inventore autem eum
+              pariatur. Voluptate quidem id eligendi reiciendis, ab laboriosam
+              quod? Est quasi tempora repellat?
+            </>
+          }
         />
       )}
       {windows.project.show && (
@@ -121,6 +140,14 @@ const Home = () => {
           position={windows.project.position}
           onPositionChange={(x, y) => updateWindowPosition("project", x, y)}
           style={{ zIndex: 2 }}
+          aboutContent={
+            <>
+              am quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Porro at eius molestiae vel
+              excepturi inventore autem eum pariatur. Voluptate quidem id
+              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
+            </>
+          }
         />
       )}
       {windows.network.show && (
@@ -132,6 +159,54 @@ const Home = () => {
           position={windows.network.position}
           onPositionChange={(x, y) => updateWindowPosition("network", x, y)}
           style={{ zIndex: 3 }}
+          aboutContent={
+            <>
+              am quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Porro at eius molestiae vel
+              excepturi inventore autem eum pariatur. Voluptate quidem id
+              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
+              repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Porro at eius molestiae vel excepturi inventore autem eum
+              pariatur. Voluptate quidem id eligendi reiciendis, ab laboriosam
+              quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Porro at eius molestiae vel
+              excepturi inventore autem eum pariatur. Voluptate quidem id
+              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
+              repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Porro at eius molestiae vel excepturi inventore autem eum
+              pariatur. Voluptate quidem id eligendi reiciendis, ab laboriosam
+              quod? Est quasi tempora repellat? am quod? Est quasi tempora
+              repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Porro at eius molestiae vel excepturi inventore autem eum
+              pariatur. Voluptate quidem id eligendi reiciendis, ab laboriosam
+              quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Porro at eius molestiae vel
+              excepturi inventore autem eum pariatur. Voluptate quidem id
+              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
+              repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Porro at eius molestiae vel excepturi inventore autem eum
+              pariatur. Voluptate quidem id eligendi reiciendis, ab laboriosam
+              quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Porro at eius molestiae vel
+              excepturi inventore autem eum pariatur. Voluptate quidem id
+              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
+              repellat? am quod? Est quasi tempora repellat? Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Porro at eius molestiae vel
+              excepturi inventore autem eum pariatur. Voluptate quidem id
+              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
+              repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Porro at eius molestiae vel excepturi inventore autem eum
+              pariatur. Voluptate quidem id eligendi reiciendis, ab laboriosam
+              quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Porro at eius molestiae vel
+              excepturi inventore autem eum pariatur. Voluptate quidem id
+              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
+              repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Porro at eius molestiae vel excepturi inventore autem eum
+              pariatur. Voluptate quidem id eligendi reiciendis, ab laboriosam
+              quod? Est quasi tempora repellat?
+            </>
+          }
         />
       )}
 
