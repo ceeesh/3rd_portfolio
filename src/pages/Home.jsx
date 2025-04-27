@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Internet from "../components/Internet";
 import FooterWindow from "../layouts/FooterWindow";
 import internetLogo from "../assets/images/logo-internet.png";
@@ -6,27 +6,75 @@ import folderLogo from "../assets/images/logo-folder.png";
 import computerLogo from "../assets/images/logo-computer.png";
 
 const Home = () => {
-  const [profileShow, setProfileShow] = useState(false);
-  const [projectShow, setProjectShow] = useState(false);
-  const [networksShow, setNetworksShow] = useState(false);
   const profileRef = useRef(null);
   const projectRef = useRef(null);
-  const networksRef = useRef(null);
-  const [profilePosition, setProfilePosition] = useState({ x: 550, y: -380 });
-  const [projectPosition, setProjectPosition] = useState({ x: 400, y: -280 });
-  const [networksPosition, setNetworksPosition] = useState({ x: 350, y: -240 });
+  const networkRef = useRef(null);
 
-  const updateProfilePosition = (x, y) => setProfilePosition({ x, y });
-  const updateProjectPosition = (x, y) => setProjectPosition({ x, y });
-  const updateNetworkPosition = (x, y) => setNetworksPosition({ x, y });
+  const defaultPositions = {
+    profile: { x: 550, y: -380 },
+    project: { x: 400, y: -280 },
+    network: { x: 350, y: -240 },
+  };
 
+  const [windows, setWindows] = useState({
+    profile: {
+      show: false,
+      position: defaultPositions.profile,
+    },
+    project: {
+      show: false,
+      position: defaultPositions.project,
+    },
+    network: {
+      show: false,
+      position: defaultPositions.network,
+    },
+  });
+
+  const updateWindowPosition = (key, x, y) => {
+    setWindows((prev) => ({
+      ...prev,
+      [key]: {
+        ...prev[key],
+        position: { x, y },
+      },
+    }));
+  };
+
+  const setWindowShow = (key, value) => {
+    setWindows((prev) => ({
+      ...prev,
+      [key]: {
+        ...prev[key],
+        show: value,
+      },
+    }));
+  };
+  
+  useEffect(() => {
+    setWindows((prev) => {
+      const updated = { ...prev };
+
+      if (!prev.profile.show) {
+        updated.profile.position = defaultPositions.profile;
+      }
+      if (!prev.project.show) {
+        updated.project.position = defaultPositions.project;
+      }
+      if (!prev.network.show) {
+        updated.network.position = defaultPositions.network;
+      }
+
+      return updated;
+    });
+  }, [windows.profile.show, windows.project.show, windows.network.show]);
 
   return (
     <div className="w-full min-h-screen">
       <div className="flex flex-col px-5">
         <div
           className="cursor-pointer text-white w-fit"
-          onClick={() => setProfileShow(true)}
+          onClick={() => setWindowShow("profile", true)}
         >
           <div className="flex flex-col items-center">
             <img src={internetLogo} alt="Internet Logo" className="w-30" />
@@ -35,7 +83,7 @@ const Home = () => {
         </div>
         <div
           className="cursor-pointer text-white w-fit"
-          onClick={() => setProjectShow(true)}
+          onClick={() => setWindowShow("project", true)}
         >
           <div className="flex flex-col items-center">
             <img src={folderLogo} alt="Folder Logo" className="w-30" />
@@ -44,7 +92,7 @@ const Home = () => {
         </div>
         <div
           className="cursor-pointer text-white w-fit"
-          onClick={() => setNetworksShow(true)}
+          onClick={() => setWindowShow("network", true)}
         >
           <div className="flex flex-col items-center">
             <img src={computerLogo} alt="Computer Logo" className="w-30" />
@@ -53,36 +101,36 @@ const Home = () => {
         </div>
       </div>
 
-      {profileShow && (
+      {windows.profile.show && (
         <Internet
           key="profile"
-          show={profileShow}
-          setShow={setProfileShow}
+          show={windows.profile.show}
+          setShow={(value) => setWindowShow("profile", value)}
           nodeRef={profileRef}
-          position={profilePosition}
-          onPositionChange={updateProfilePosition}
+          position={windows.profile.position}
+          onPositionChange={(x, y) => updateWindowPosition("profile", x, y)}
           style={{ zIndex: 1 }}
         />
       )}
-      {projectShow && (
+      {windows.project.show && (
         <Internet
           key="project"
-          show={projectShow}
-          setShow={setProjectShow}
+          show={windows.project.show}
+          setShow={(value) => setWindowShow("project", value)}
           nodeRef={projectRef}
-          position={projectPosition}
-          onPositionChange={updateProjectPosition}
+          position={windows.project.position}
+          onPositionChange={(x, y) => updateWindowPosition("project", x, y)}
           style={{ zIndex: 2 }}
         />
       )}
-       {networksShow && (
+      {windows.network.show && (
         <Internet
           key="network"
-          show={networksShow}
-          setShow={setNetworksShow}
-          nodeRef={networksRef}
-          position={networksPosition}
-          onPositionChange={updateNetworkPosition}
+          show={windows.network.show}
+          setShow={(value) => setWindowShow("network", value)}
+          nodeRef={networkRef}
+          position={windows.network.position}
+          onPositionChange={(x, y) => updateWindowPosition("network", x, y)}
           style={{ zIndex: 3 }}
         />
       )}

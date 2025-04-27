@@ -14,7 +14,7 @@ const Header = ({ setShow, show }) => {
       <div className="flex justify-end p-[2px] bg-gradient-to-r from-blue-800 to-blue-400">
         <div className="">
           <button
-            onClick={() => setShow((prev) => !prev)}
+            onClick={() => setShow(!show)}
             className="border-2 w-8 bg-gray-300 cursor-pointer 
     border-b-black border-r-black border-t-gray-200 border-l-gray-200 
     active:border-t-black active:border-l-black active:border-b-gray-200 active:border-r-gray-200"
@@ -29,7 +29,7 @@ const Header = ({ setShow, show }) => {
             &#9633;
           </button>
           <button
-            onClick={() => setShow((prev) => !prev)}
+            onClick={() => setShow(!show)}
             className="border-2 w-8 bg-gray-300 cursor-pointer 
     border-b-black border-r-black border-t-gray-200 border-l-gray-200 
     active:border-t-black active:border-l-black active:border-b-gray-200 active:border-r-gray-200"
