@@ -1,10 +1,10 @@
 import React from "react";
-import About from "../sections/About";
 import Header from "../layouts/Header";
 import Footer from "../layouts/Footer";
 import Draggable from "react-draggable";
+import Contents from "./Contents";
 
-const Internet = ({ show, setShow, nodeRef, position, onPositionChange, style, aboutContent }) => {
+const Internet = ({ show, setShow, nodeRef, position, onPositionChange, style, contents }) => {
   return (
     <Draggable
       nodeRef={nodeRef}
@@ -14,14 +14,14 @@ const Internet = ({ show, setShow, nodeRef, position, onPositionChange, style, a
       onStop={(e, data) => onPositionChange(data.x, data.y)}
     >
       {/* shadow-[10px_10px_5px_#0A3B76] */}
-      <div ref={nodeRef} className="max-w-3xl shadow-[10px_10px_5px_#006666]"  style={{
+      <div ref={nodeRef} className="max-w-3xl shadow-[10px_10px_5px_#006666] m-10"  style={{
           ...style,
           position: "absolute",
         }}>
         <div className="drag-handle">
           <Header show={show} setShow={setShow} />
         </div>
-        <About aboutContent={aboutContent}/>
+        <Contents contents={contents}/>
         <Footer />
       </div>
     </Draggable>

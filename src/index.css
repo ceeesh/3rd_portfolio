@@ -5,6 +5,10 @@
   --color-secondaryBg: #008080;
 }
 
+body {
+  background-color: #008080;
+}
+
 .win95-scroll::-webkit-scrollbar {
   width: 14px;
   height: 16px;

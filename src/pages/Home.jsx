@@ -4,6 +4,7 @@ import FooterWindow from "../layouts/FooterWindow";
 import internetLogo from "../assets/images/logo-internet.png";
 import folderLogo from "../assets/images/logo-folder.png";
 import computerLogo from "../assets/images/logo-computer.png";
+import Profile from "../sections/Profile";
 
 const Home = () => {
   const profileRef = useRef(null);
@@ -69,6 +70,29 @@ const Home = () => {
     });
   }, [windows.profile.show, windows.project.show, windows.network.show]);
 
+  // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  // const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setWindowWidth(window.innerWidth);
+  //     setWindowHeight(window.innerHeight);
+  //   };
+
+  //   // Add event listener for window resize
+  //   window.addEventListener("resize", handleResize);
+
+  //   // Cleanup the event listener on component unmount
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []); // Empty dependency array means this runs only once on mount
+
+  // useEffect(() => {
+  //   console.log("windowWidth:", windowWidth);
+  //   console.log("windowHeight:", windowHeight);
+  // }, [windowWidth, windowHeight]);
+
   return (
     <div className="w-full min-h-screen">
       <div className="flex flex-col px-5">
@@ -110,23 +134,9 @@ const Home = () => {
           position={windows.profile.position}
           onPositionChange={(x, y) => updateWindowPosition("profile", x, y)}
           style={{ zIndex: 1 }}
-          aboutContent={
+          contents={
             <>
-              am quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Porro at eius molestiae vel
-              excepturi inventore autem eum pariatur. Voluptate quidem id
-              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
-              repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Porro at eius molestiae vel excepturi inventore autem eum
-              pariatur. Voluptate quidem id eligendi reiciendis, ab laboriosam
-              quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Porro at eius molestiae vel
-              excepturi inventore autem eum pariatur. Voluptate quidem id
-              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
-              repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Porro at eius molestiae vel excepturi inventore autem eum
-              pariatur. Voluptate quidem id eligendi reiciendis, ab laboriosam
-              quod? Est quasi tempora repellat?
+              <Profile />
             </>
           }
         />
@@ -140,7 +150,7 @@ const Home = () => {
           position={windows.project.position}
           onPositionChange={(x, y) => updateWindowPosition("project", x, y)}
           style={{ zIndex: 2 }}
-          aboutContent={
+          contents={
             <>
               am quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
               consectetur adipisicing elit. Porro at eius molestiae vel
@@ -159,7 +169,7 @@ const Home = () => {
           position={windows.network.position}
           onPositionChange={(x, y) => updateWindowPosition("network", x, y)}
           style={{ zIndex: 3 }}
-          aboutContent={
+          contents={
             <>
               am quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
               consectetur adipisicing elit. Porro at eius molestiae vel
