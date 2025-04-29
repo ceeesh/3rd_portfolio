@@ -5,17 +5,31 @@ import internetLogo from "../assets/images/logo-internet.png";
 import folderLogo from "../assets/images/logo-folder.png";
 import computerLogo from "../assets/images/logo-computer.png";
 import Profile from "../sections/Profile";
+import Projects from "../sections/Projects";
+import Networks from "../sections/Networks";
 
 const Home = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
   const profileRef = useRef(null);
   const projectRef = useRef(null);
   const networkRef = useRef(null);
+
+  // const [defaultPositions, setDefaultPositions] = useState({
+  //   profile: { x: 0, y: 0 },
+  //   project: { x: 0, y: 0 },
+  //   network: { x: 0, y: 0 },
+  // });
 
   const defaultPositions = {
     profile: { x: 550, y: -380 },
     project: { x: 400, y: -280 },
     network: { x: 350, y: -240 },
   };
+
 
   const [windows, setWindows] = useState({
     profile: {
@@ -48,50 +62,34 @@ const Home = () => {
       [key]: {
         ...prev[key],
         show: value,
+        // position: value ? defaultPositions[key] : prev[key].position, // only update on show
       },
     }));
   };
 
-  useEffect(() => {
-    setWindows((prev) => {
-      const updated = { ...prev };
-
-      if (!prev.profile.show) {
-        updated.profile.position = defaultPositions.profile;
-      }
-      if (!prev.project.show) {
-        updated.project.position = defaultPositions.project;
-      }
-      if (!prev.network.show) {
-        updated.network.position = defaultPositions.network;
-      }
-
-      return updated;
-    });
-  }, [windows.profile.show, windows.project.show, windows.network.show]);
-
-  // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  // const [windowHeight, setWindowHeight] = useState(window.innerHeight);
-
   // useEffect(() => {
   //   const handleResize = () => {
-  //     setWindowWidth(window.innerWidth);
-  //     setWindowHeight(window.innerHeight);
+  //     setWindowSize({
+  //       width: window.innerWidth,
+  //       height: window.innerHeight,
+  //     });
   //   };
 
-  //   // Add event listener for window resize
   //   window.addEventListener("resize", handleResize);
-
-  //   // Cleanup the event listener on component unmount
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, []); // Empty dependency array means this runs only once on mount
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
 
   // useEffect(() => {
-  //   console.log("windowWidth:", windowWidth);
-  //   console.log("windowHeight:", windowHeight);
-  // }, [windowWidth, windowHeight]);
+  //   const centerX = windowSize.width / 2;
+  //   const centerY = windowSize.height / 2;
+
+  //   // Adjust the offsets as needed based on window size or desired layout
+  //   setDefaultPositions({
+  //     profile: { x: centerX - 250, y: centerY - 950 },
+  //     project: { x: centerX - 150, y: centerY - 750 },
+  //     network: { x: centerX - 100, y: centerY - 660 },
+  //   });
+  // }, [windowSize]);
 
   return (
     <div className="w-full min-h-screen">
@@ -134,11 +132,7 @@ const Home = () => {
           position={windows.profile.position}
           onPositionChange={(x, y) => updateWindowPosition("profile", x, y)}
           style={{ zIndex: 1 }}
-          contents={
-            <>
-              <Profile />
-            </>
-          }
+          contents={<Profile />}
         />
       )}
       {windows.project.show && (
@@ -150,14 +144,7 @@ const Home = () => {
           position={windows.project.position}
           onPositionChange={(x, y) => updateWindowPosition("project", x, y)}
           style={{ zIndex: 2 }}
-          contents={
-            <>
-              am quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Porro at eius molestiae vel
-              excepturi inventore autem eum pariatur. Voluptate quidem id
-              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
-            </>
-          }
+          contents={<Projects />}
         />
       )}
       {windows.network.show && (
@@ -169,54 +156,7 @@ const Home = () => {
           position={windows.network.position}
           onPositionChange={(x, y) => updateWindowPosition("network", x, y)}
           style={{ zIndex: 3 }}
-          contents={
-            <>
-              am quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Porro at eius molestiae vel
-              excepturi inventore autem eum pariatur. Voluptate quidem id
-              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
-              repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Porro at eius molestiae vel excepturi inventore autem eum
-              pariatur. Voluptate quidem id eligendi reiciendis, ab laboriosam
-              quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Porro at eius molestiae vel
-              excepturi inventore autem eum pariatur. Voluptate quidem id
-              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
-              repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Porro at eius molestiae vel excepturi inventore autem eum
-              pariatur. Voluptate quidem id eligendi reiciendis, ab laboriosam
-              quod? Est quasi tempora repellat? am quod? Est quasi tempora
-              repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Porro at eius molestiae vel excepturi inventore autem eum
-              pariatur. Voluptate quidem id eligendi reiciendis, ab laboriosam
-              quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Porro at eius molestiae vel
-              excepturi inventore autem eum pariatur. Voluptate quidem id
-              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
-              repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Porro at eius molestiae vel excepturi inventore autem eum
-              pariatur. Voluptate quidem id eligendi reiciendis, ab laboriosam
-              quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Porro at eius molestiae vel
-              excepturi inventore autem eum pariatur. Voluptate quidem id
-              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
-              repellat? am quod? Est quasi tempora repellat? Lorem ipsum dolor
-              sit amet consectetur adipisicing elit. Porro at eius molestiae vel
-              excepturi inventore autem eum pariatur. Voluptate quidem id
-              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
-              repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Porro at eius molestiae vel excepturi inventore autem eum
-              pariatur. Voluptate quidem id eligendi reiciendis, ab laboriosam
-              quod? Est quasi tempora repellat? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Porro at eius molestiae vel
-              excepturi inventore autem eum pariatur. Voluptate quidem id
-              eligendi reiciendis, ab laboriosam quod? Est quasi tempora
-              repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Porro at eius molestiae vel excepturi inventore autem eum
-              pariatur. Voluptate quidem id eligendi reiciendis, ab laboriosam
-              quod? Est quasi tempora repellat?
-            </>
-          }
+          contents={<Networks />}
         />
       )}
 
