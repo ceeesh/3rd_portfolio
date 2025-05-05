@@ -62,34 +62,11 @@ const Home = () => {
       [key]: {
         ...prev[key],
         show: value,
-        // position: value ? defaultPositions[key] : prev[key].position, // only update on show
+        position: !value ? defaultPositions[key] : prev[key].position,
       },
     }));
   };
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setWindowSize({
-  //       width: window.innerWidth,
-  //       height: window.innerHeight,
-  //     });
-  //   };
-
-  //   window.addEventListener("resize", handleResize);
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
-
-  // useEffect(() => {
-  //   const centerX = windowSize.width / 2;
-  //   const centerY = windowSize.height / 2;
-
-  //   // Adjust the offsets as needed based on window size or desired layout
-  //   setDefaultPositions({
-  //     profile: { x: centerX - 250, y: centerY - 950 },
-  //     project: { x: centerX - 150, y: centerY - 750 },
-  //     network: { x: centerX - 100, y: centerY - 660 },
-  //   });
-  // }, [windowSize]);
+  
 
   return (
     <div className="w-full min-h-screen">
