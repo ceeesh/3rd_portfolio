@@ -88,5 +88,21 @@ export const projectsData = [
       "Customized WordPress theme and WooCommerce templates to align with brand identity with mobile-responsive design"
     ],
     link: "https://elderarmorusa.com/"
+  },
+  {
+    title: "OLD PORTFOLIO's",
+    type: "Personal Portfolio",
+    status: "Archived",
+    year: "2024",
+    description: "Previous iterations of my personal portfolio websites showcasing my evolution as a developer.",
+    technologies: ["React", "Next.js", "Tailwind CSS", "Vercel"],
+    highlights: [
+      "Malacas Portfolio - Modern portfolio with minimalist design and smooth animations",
+      "CLI Portfolio - Terminal-inspired interactive portfolio experience"
+    ],
+    links: [
+      { name: "Malacas Portfolio", url: "https://malacas.vercel.app/" },
+      { name: "CLI Portfolio", url: "https://cli-ceesh.vercel.app/" }
+    ]
   }
 ];

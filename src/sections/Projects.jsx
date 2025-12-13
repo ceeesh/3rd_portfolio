@@ -46,7 +46,7 @@ const Projects = () => {
               </ul>
             </div>
 
-            {/* View Project Link */}
+            {/* View Project Link(s) */}
             {project.link && (
               <div className="pt-2">
                 <a
@@ -58,6 +58,22 @@ const Projects = () => {
                 >
                   View Project →
                 </a>
+              </div>
+            )}
+            {project.links && (
+              <div className="pt-2 flex flex-wrap gap-2">
+                {project.links.map((link, linkIndex) => (
+                  <a
+                    key={linkIndex}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block border-2 border-t-gray-100 border-l-gray-100 border-r-gray-600 border-b-gray-600 bg-gray-300 px-4 py-2 font-bold text-sm
+                    active:border-t-gray-600 active:border-l-gray-600 active:border-b-gray-100 active:border-r-gray-100 hover:bg-gray-200"
+                  >
+                    {link.name} →
+                  </a>
+                ))}
               </div>
             )}
           </div>
