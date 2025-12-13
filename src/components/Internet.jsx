@@ -1,25 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../layouts/Header";
 import Footer from "../layouts/Footer";
 import Draggable from "react-draggable";
 import Contents from "./Contents";
 
-const Internet = ({ show, setShow, nodeRef, position, onPositionChange, style, contents }) => {
+const Internet = ({ title, show, setShow, onMinimize, nodeRef, onFocus, isActive, style, contents, offsetX = 0, offsetY = 0 }) => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const isMobile = windowWidth < 768;
+  const actualOffsetX = isMobile ? 0 : offsetX;
+
   return (
     <Draggable
       nodeRef={nodeRef}
       handle=".drag-handle"
-      position={position}
-      cancel="button"   
-      onStop={(e, data) => onPositionChange(data.x, data.y)}
+      cancel="button"
     >
-      {/* shadow-[10px_10px_5px_#0A3B76] */}
-      <div ref={nodeRef} className="max-w-3xl shadow-[10px_10px_5px_#006666] m-10"  style={{
+      <div
+        ref={nodeRef}
+        className="w-[calc(100vw-70px)] md:w-auto md:max-w-3xl shadow-[10px_10px_5px_#006666]"
+        style={{
           ...style,
           position: "absolute",
-        }}>
-        <div className="drag-handle">
-          <Header show={show} setShow={setShow} />
+          top: `${50 + offsetY}px`,
+          left: `calc(30% + ${actualOffsetX}px)`,
+          transform: `translateX(-50%)`,
+        }}
+        onClick={onFocus}
+      >
+        <div className="drag-handle cursor-move md:cursor-move">
+          <Header
+            title={title}
+            show={show}
+            setShow={setShow}
+            onMinimize={onMinimize}
+            isActive={isActive}
+          />
         </div>
         <Contents contents={contents}/>
         <Footer />

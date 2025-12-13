@@ -1,12 +1,22 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 @theme {
-  --color-mainBg: #3A6EA5; 
+  --color-mainBg: #3A6EA5;
   --color-secondaryBg: #008080;
+  --font-retro: 'VT323', monospace;
+  --font-system: 'MS Sans Serif', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
   background-color: #008080;
+  font-family: var(--font-system);
+  cursor: default;
+}
+
+* {
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .win95-scroll::-webkit-scrollbar {
@@ -34,4 +44,56 @@ body {
 
 .win95-scroll::-webkit-scrollbar-thumb:hover {
   background: #d0d0d0;
+}
+
+/* CRT Screen Effects */
+.crt-screen {
+  position: relative;
+}
+
+.crt-screen::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Desktop Icon Styles */
+.desktop-icon {
+  position: relative;
+  padding: 8px;
+  user-select: none;
+  border: 2px dotted transparent;
+  transition: none;
+}
+
+.desktop-icon:hover {
+  filter: brightness(1.1);
+}
+
+.desktop-icon.selected {
+  background: rgba(0, 0, 128, 0.3);
+  border: 2px dotted #000080;
+}
+
+.desktop-icon img {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.desktop-icon span {
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
