@@ -1,6 +1,7 @@
 import React from "react";
 import { profileData } from "../data/profileData";
 import resumePDF from "../assets/images/CeeJay Malacas Resume 2025.pdf";
+import profileImage from "../assets/images/me.jpeg";
 
 const Profile = () => {
   const handleDownloadCV = () => {
@@ -17,8 +18,8 @@ const Profile = () => {
         <div className="flex flex-col md:flex-row gap-3 md:gap-4 items-center md:items-start">
           {/* Profile Picture Frame */}
           <div className="border-4 border-l-white border-t-white border-r-gray-700 border-b-gray-700 p-1 bg-gray-300 shrink-0">
-            <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-blue-200 to-blue-400 flex items-center justify-center text-5xl md:text-6xl">
-              {profileData.profileEmoji}
+            <div className="w-24 h-24 md:w-32 md:h-32 overflow-hidden">
+              <img src={profileImage} alt={profileData.name} className="w-full h-full object-cover" />
             </div>
           </div>
 

@@ -15,11 +15,11 @@ export const profileData = {
     "React, Redux, Next.js",
     "Node.js, Express, PHP, Ruby on Rails",
     "WordPress, Elementor Pro, WooCommerce",
-    "PostgreSQL, MongoDB, MySQL",
-    "TailwindCSS, Bootstrap, Material UI",
+    "PostgreSQL, MySQL",
+    "TailwindCSS, Bootstrap",
     "Git, Docker, Vite",
     "Auth0, Stripe, Fiuu, Billplz",
-    "Python, Laravel, Firebase, Figma"
+    "Python, Laravel"
   ],
 
   contact: {
