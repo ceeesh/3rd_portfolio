@@ -1,33 +1,36 @@
 export const profileData = {
-  name: "Your Name",
-  title: "Full Stack Developer",
-  location: "Your City, Country",
-  status: "Available for opportunities",
-  profileEmoji: "👤",
+  name: "Cee Jay Malacas",
+  title: "Full Stack Web Developer",
+  location: "Philippines",
+  status: "Currently working at Verity Intelligence",
+  profileEmoji: "💻",
 
   about: [
-    "Welcome to my portfolio! I'm a passionate developer with expertise in building modern web applications. I enjoy creating intuitive user interfaces and solving complex problems.",
-    "This portfolio is designed with a nostalgic Windows 95 aesthetic to showcase both technical skills and creative design."
+    "I'm a passionate Full Stack Web Developer with expertise in building modern web applications using React, Node.js, and PHP frameworks. Currently working remotely at Verity Intelligence, I specialize in developing secure, scalable applications with seamless payment integrations and optimized user experiences.",
+    "With a strong foundation in both frontend and backend development, I've delivered projects ranging from e-commerce platforms to enterprise background verification systems. I'm dedicated to writing clean, maintainable code and creating intuitive interfaces that users love."
   ],
 
   skills: [
-    "JavaScript / TypeScript",
-    "React / Next.js",
-    "Node.js / Express",
-    "HTML / CSS / Tailwind",
-    "Git / GitHub",
-    "Database (SQL/NoSQL)"
+    "HTML5, CSS3, JavaScript, TypeScript",
+    "React, Redux, Next.js",
+    "Node.js, Express, PHP, Ruby on Rails",
+    "WordPress, Elementor Pro, WooCommerce",
+    "PostgreSQL, MongoDB, MySQL",
+    "TailwindCSS, Bootstrap, Material UI",
+    "Git, Docker, Vite",
+    "Auth0, Stripe, Fiuu, Billplz",
+    "Python, Laravel, Firebase, Figma"
   ],
 
   contact: {
-    email: "your.email@example.com",
+    email: "ceejaymalacas17@gmail.com",
     github: {
-      url: "https://github.com/yourusername",
-      display: "github.com/yourusername"
+      url: "https://github.com/ceeesh",
+      display: "github.com/ceeesh"
     },
     linkedin: {
-      url: "https://linkedin.com/in/yourprofile",
-      display: "linkedin.com/in/yourprofile"
+      url: "https://www.linkedin.com/in/cee-jay-malacas/",
+      display: "linkedin.com/in/cee-jay-malacas"
     }
   }
 };

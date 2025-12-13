@@ -4,6 +4,7 @@ import FooterWindow from "../layouts/FooterWindow";
 import internetLogo from "../assets/images/logo-internet.png";
 import folderLogo from "../assets/images/logo-folder.png";
 import computerLogo from "../assets/images/logo-computer.png";
+import fileLogo from "../assets/images/logo-file.png";
 import Profile from "../sections/Profile";
 import Projects from "../sections/Projects";
 import Networks from "../sections/Networks";
@@ -75,6 +76,16 @@ const Home = () => {
       },
     }));
     setMinimizedWindows(prev => [...prev, key]);
+    setActiveWindow(null);
+  };
+
+  const closeAllWindows = () => {
+    setWindows({
+      profile: { show: false, minimized: false },
+      project: { show: false, minimized: false },
+      network: { show: false, minimized: false },
+    });
+    setMinimizedWindows([]);
     setActiveWindow(null);
   };
 
@@ -150,7 +161,7 @@ const Home = () => {
           }}
         >
           <div className="flex flex-col items-center">
-            <img src={folderLogo} alt="Resume Logo" className="w-20" />
+            <img src={fileLogo} alt="Resume Logo" className="w-20" />
             <span className="text-sm mt-1">Resume</span>
           </div>
         </div>
@@ -209,6 +220,7 @@ const Home = () => {
         minimizedWindows={minimizedWindows}
         onRestore={restoreWindow}
         windows={windows}
+        onCloseAll={closeAllWindows}
       />
     </div>
   );
