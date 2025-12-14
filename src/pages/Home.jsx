@@ -114,7 +114,7 @@ const Home = () => {
   
 
   return (
-    <div className="w-full h-screen overflow-hidden crt-screen" onClick={handleDesktopClick}>
+    <div className="w-full h-screen overflow-hidden" onClick={handleDesktopClick}>
       <div className="flex flex-col px-5 gap-6 py-4">
         <div
           className={`desktop-icon cursor-pointer text-white w-fit ${selectedIcon === 'profile' ? 'selected' : ''}`}

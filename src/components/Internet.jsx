@@ -27,13 +27,13 @@ const Internet = ({ title, show, setShow, onMinimize, nodeRef, onFocus, isActive
     >
       <div
         ref={nodeRef}
-        className="w-[calc(100vw-70px)] md:w-auto md:max-w-3xl shadow-[10px_10px_5px_#006666]"
+        className="w-[calc(100vw-40px)] md:w-auto md:max-w-3xl shadow-[10px_10px_5px_#006666]"
         style={{
           ...style,
           position: "absolute",
           top: `${50 + offsetY}px`,
-          left: `calc(30% + ${actualOffsetX}px)`,
-          transform: `translateX(-50%)`,
+          left: isMobile ? '20px' : `calc(30% + ${actualOffsetX}px)`,
+          transform: isMobile ? 'none' : `translateX(-50%)`,
         }}
         onClick={onFocus}
       >
