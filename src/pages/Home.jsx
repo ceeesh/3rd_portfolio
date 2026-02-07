@@ -165,6 +165,19 @@ const Home = () => {
             <span className="text-sm mt-1">Resume</span>
           </div>
         </div>
+        <div
+          className={`desktop-icon cursor-pointer text-white w-fit ${selectedIcon === 'articles' ? 'selected' : ''}`}
+          onClick={(e) => {
+            e.stopPropagation();
+            setSelectedIcon('articles');
+            window.open('https://medium.com/@ceejaymalacas17', '_blank');
+          }}
+        >
+          <div className="flex flex-col items-center">
+            <img src={internetLogo} alt="Articles Logo" className="w-20" />
+            <span className="text-sm mt-1">Articles</span>
+          </div>
+        </div>
       </div>
 
       {windows.profile.show && !windows.profile.minimized && (
