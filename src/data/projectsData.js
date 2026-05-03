@@ -15,7 +15,7 @@ export const projectsData = [
     link: "https://www.verityintel.com/"
   },
   {
-    title: "VeriSafe App",
+    title: "VERISafe App",
     type: "React Application",
     status: "Live",
     year: "2025",
@@ -41,6 +41,97 @@ export const projectsData = [
       "Created content management workflows enabling non-technical staff to independently update verification processes, user guides, and platform documentation"
     ],
     link: "https://www.halocheck.com.my/"
+  },
+  {
+    title: "Eduk8u",
+    type: "WordPress Website",
+    status: "Live",
+    year: "2023 - 2025",
+    description: "Education platform website offering learning programs and course information for students across Asia.",
+    technologies: ["WordPress", "Elementor Pro", "PHP", "MySQL", "GoHighLevel (GHL)"],
+    highlights: [
+      "Maintain and update Elementor Pro page templates for programs, faculty, and announcements",
+      "Handle plugin updates, security patching, and ongoing performance tuning",
+      "Manage backend infrastructure including hosting, domain configuration, and deployment workflows",
+      "Administer GoHighLevel (GHL) for marketing automation, lead capture, and CRM integration",
+      "Support non-technical staff with content updates and site administration"
+    ],
+    link: "https://www.eduk8u.com/"
+  },
+  {
+    title: "Work Ready Asia",
+    type: "WordPress Website",
+    status: "Live",
+    year: "2023 - 2025",
+    description: "Labour hire and ethical recruitment platform serving aged care, engineering, and hospitality sectors across Australia and Southeast Asia.",
+    technologies: ["WordPress", "Elementor Pro", "PHP", "MySQL"],
+    highlights: [
+      "Develop and maintain Elementor Pro layouts for industry-specific recruitment pages (aged care, engineering, hospitality) and candidate-facing content",
+      "Manage theme customization, plugin updates, and routine security hardening",
+      "Manage backend infrastructure including hosting, domain configuration, and deployment workflows",
+      "Enable content management workflows for non-technical staff to publish job listings and updates independently"
+    ],
+    link: "https://www.workreadyasia.com/"
+  },
+  {
+    title: "ICQA",
+    type: "WordPress LMS Platform",
+    status: "Live",
+    year: "2023 - 2025",
+    description: "WordPress-based learning management system delivering online courses to learners (similar to Udemy/Moodle), operated under the Queensland (Australia) education domain.",
+    technologies: ["WordPress", "LMS Plugin", "Elementor Pro", "PHP", "MySQL"],
+    highlights: [
+      "Maintain LMS course delivery, enrollments, and student progress tracking on a WordPress-based platform",
+      "Handle plugin and theme updates, SSL management, and vulnerability patching across the LMS stack",
+      "Manage backend infrastructure including hosting, domain configuration, and deployment workflows",
+      "Support instructors and administrators with course setup, content publishing, and learner management"
+    ],
+    link: "https://icqa.qld.edu.au/"
+  },
+  {
+    title: "AttendCare",
+    type: "WordPress Website",
+    status: "Live",
+    year: "2023 - 2025",
+    description: "NDIS-registered home care provider (Melbourne, Victoria) delivering personal care, support coordination, and high-intensity disability care across Australia.",
+    technologies: ["WordPress", "Elementor Pro", "PHP", "MySQL"],
+    highlights: [
+      "Maintain responsive Elementor Pro layouts for NDIS service pages, support coordination, and clinical care offerings",
+      "Manage plugin updates, performance tuning, and security patching for ongoing reliability",
+      "Manage backend infrastructure including hosting, domain configuration, and deployment workflows",
+      "Support staff with content updates and intake/lead management workflows for participant onboarding"
+    ],
+    link: "https://attendcare.com.au/"
+  },
+  {
+    title: "TVET School Asia",
+    type: "Moodle LMS",
+    status: "Live",
+    year: "2023 - 2025",
+    description: "Moodle-based learning management system delivering technical and vocational education courses across Asia.",
+    technologies: ["Moodle", "PHP", "MySQL"],
+    highlights: [
+      "Administer Moodle deployment supporting course delivery, enrollments, and learner management",
+      "Handle plugin updates, theme customization, and ongoing security maintenance",
+      "Manage backend infrastructure including hosting, domain configuration, and deployment workflows",
+      "Support instructors and administrators with course setup and learner tracking workflows"
+    ],
+    link: "https://tvetschoolasia.com/"
+  },
+  {
+    title: "TVET School Asia Shop",
+    type: "WooCommerce Store",
+    status: "In Development - Coming Soon",
+    year: "2025",
+    description: "Upcoming e-commerce storefront for TVET School Asia, currently under active development.",
+    technologies: ["WordPress", "WooCommerce", "Elementor Pro"],
+    highlights: [
+      "Designing product catalog and checkout flow tailored for TVET course materials and learning resources",
+      "Integrating with the existing TVET School Asia Moodle LMS ecosystem",
+      "Managing backend infrastructure including hosting, domain configuration, and deployment for launch",
+      "Launch coming soon"
+    ],
+    link: "https://shop.tvetschoolasia.com/"
   },
   {
     title: "Capital Office UK",
