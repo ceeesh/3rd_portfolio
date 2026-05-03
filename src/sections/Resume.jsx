@@ -1,6 +1,6 @@
 import React from "react";
 import { resumeData } from "../data/resumeData";
-import resumePDF from "../assets/images/CeeJay Malacas Resume 2025.pdf";
+import resumePDF from "../assets/images/CeeJay-Malacas-Resume-2026.pdf";
 
 const Resume = () => {
   const handleDownloadPDF = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { profileData } from "../data/profileData";
-import resumePDF from "../assets/images/CeeJay Malacas Resume 2026.pdf";
+import resumePDF from "../assets/images/CeeJay-Malacas-Resume-2026.pdf";
 import profileImage from "../assets/images/me.jpeg";
 
 const Profile = () => {

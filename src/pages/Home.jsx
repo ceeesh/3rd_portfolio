@@ -8,7 +8,7 @@ import fileLogo from "../assets/images/logo-file.png";
 import Profile from "../sections/Profile";
 import Projects from "../sections/Projects";
 import Networks from "../sections/Networks";
-import resumePDF from "../assets/images/CeeJay Malacas Resume 2026.pdf";
+import resumePDF from "../assets/images/CeeJay-Malacas-Resume-2026.pdf";
 
 const Home = () => {
   const [windowSize, setWindowSize] = useState({
